@@ -24,3 +24,9 @@ void Car::drawCurrent(sf::RenderTarget& target, sf::RenderStates& states) const
 {
     target.draw(mSprite, states);
 }
+
+
+unsigned int Car::getCategory() const
+{
+    return Category::AnyCar;
+}

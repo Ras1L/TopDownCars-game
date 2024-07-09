@@ -146,6 +146,7 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr_atomic.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr_base.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/specfun.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/std_abs.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/std_function.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_algo.h \
@@ -182,6 +183,7 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/cctype \
   C:/msys64/ucrt64/include/c++/13.2.0/cerrno \
   C:/msys64/ucrt64/include/c++/13.2.0/clocale \
+  C:/msys64/ucrt64/include/c++/13.2.0/cmath \
   C:/msys64/ucrt64/include/c++/13.2.0/compare \
   C:/msys64/ucrt64/include/c++/13.2.0/cstddef \
   C:/msys64/ucrt64/include/c++/13.2.0/cstdio \
@@ -205,8 +207,10 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/ios \
   C:/msys64/ucrt64/include/c++/13.2.0/iosfwd \
   C:/msys64/ucrt64/include/c++/13.2.0/iterator \
+  C:/msys64/ucrt64/include/c++/13.2.0/limits \
   C:/msys64/ucrt64/include/c++/13.2.0/locale \
   C:/msys64/ucrt64/include/c++/13.2.0/map \
+  C:/msys64/ucrt64/include/c++/13.2.0/math.h \
   C:/msys64/ucrt64/include/c++/13.2.0/memory \
   C:/msys64/ucrt64/include/c++/13.2.0/new \
   C:/msys64/ucrt64/include/c++/13.2.0/ostream \
@@ -221,6 +225,18 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/string \
   C:/msys64/ucrt64/include/c++/13.2.0/string_view \
   C:/msys64/ucrt64/include/c++/13.2.0/system_error \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/bessel_function.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/beta_function.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/ell_integral.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/exp_integral.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/gamma.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/hypergeometric.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/legendre_function.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/modified_bessel_func.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/poly_hermite.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/poly_laguerre.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/riemann_zeta.tcc \
+  C:/msys64/ucrt64/include/c++/13.2.0/tr1/special_function_util.h \
   C:/msys64/ucrt64/include/c++/13.2.0/tuple \
   C:/msys64/ucrt64/include/c++/13.2.0/type_traits \
   C:/msys64/ucrt64/include/c++/13.2.0/typeinfo \
@@ -249,6 +265,7 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/limits.h \
   C:/msys64/ucrt64/include/locale.h \
   C:/msys64/ucrt64/include/malloc.h \
+  C:/msys64/ucrt64/include/math.h \
   C:/msys64/ucrt64/include/process.h \
   C:/msys64/ucrt64/include/pthread.h \
   C:/msys64/ucrt64/include/pthread_compat.h \
@@ -287,6 +304,8 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   E:/Programming/SFML/game.hpp \
   E:/Programming/SFML/game.inl \
   E:/Programming/SFML/global.h \
+  E:/Programming/SFML/player.hpp \
+  E:/Programming/SFML/player.inl \
   E:/Programming/SFML/resource_holder.hpp \
   E:/Programming/SFML/resource_holder.inl \
   E:/Programming/SFML/scene_node.hpp \
@@ -386,6 +405,8 @@ C:/Program\ Files/SFML-2.6.1/include/SFML/Graphics/Rect.hpp:
 C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_uninitialized.h:
 
 C:/Program\ Files/SFML-2.6.1/include/SFML/Graphics/Rect.inl:
+
+C:/msys64/ucrt64/include/c++/13.2.0/bits/specfun.h:
 
 C:/Program\ Files/SFML-2.6.1/include/SFML/System/FileInputStream.hpp:
 
@@ -507,6 +528,8 @@ C:/Program\ Files/SFML-2.6.1/include/SFML/Window/Touch.hpp:
 
 C:/Program\ Files/SFML-2.6.1/include/SFML/Window/VideoMode.hpp:
 
+E:/Programming/SFML/player.inl:
+
 C:/Program\ Files/SFML-2.6.1/include/SFML/Window/Vulkan.hpp:
 
 C:/Program\ Files/SFML-2.6.1/include/SFML/Window/Window.hpp:
@@ -583,6 +606,8 @@ C:/msys64/ucrt64/include/c++/13.2.0/bits/charconv.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/concept_check.h:
 
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/modified_bessel_func.tcc:
+
 C:/msys64/ucrt64/include/c++/13.2.0/bits/cpp_type_traits.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/hashtable_policy.h:
@@ -635,6 +660,8 @@ C:/msys64/ucrt64/include/c++/13.2.0/cctype:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/localefwd.h:
 
+C:/msys64/ucrt64/include/c++/13.2.0/cmath:
+
 C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_algobase.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/memory_resource.h:
@@ -650,6 +677,8 @@ C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/error_constants.h:
 C:/msys64/ucrt64/include/c++/13.2.0/bits/new_allocator.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/node_handle.h:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/ell_integral.tcc:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/ostream_insert.h:
 
@@ -757,11 +786,17 @@ C:/msys64/ucrt64/include/c++/13.2.0/initializer_list:
 
 C:/msys64/ucrt64/include/c++/13.2.0/iterator:
 
+C:/msys64/ucrt64/include/c++/13.2.0/limits:
+
 C:/msys64/ucrt64/include/c++/13.2.0/locale:
 
 C:/msys64/ucrt64/include/c++/13.2.0/new:
 
 C:/msys64/ucrt64/include/c++/13.2.0/map:
+
+C:/msys64/ucrt64/include/c++/13.2.0/math.h:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/bessel_function.tcc:
 
 C:/msys64/ucrt64/include/c++/13.2.0/memory:
 
@@ -782,6 +817,24 @@ C:/msys64/ucrt64/include/c++/13.2.0/stdexcept:
 C:/msys64/ucrt64/include/c++/13.2.0/stdlib.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/system_error:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/beta_function.tcc:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/exp_integral.tcc:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/gamma.tcc:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/hypergeometric.tcc:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/legendre_function.tcc:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/poly_hermite.tcc:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/poly_laguerre.tcc:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/riemann_zeta.tcc:
+
+C:/msys64/ucrt64/include/c++/13.2.0/tr1/special_function_util.h:
 
 E:/Programming/SFML/scene_node.hpp:
 
@@ -828,6 +881,8 @@ C:/msys64/ucrt64/include/crtdefs.h:
 C:/msys64/ucrt64/include/ctype.h:
 
 C:/msys64/ucrt64/include/malloc.h:
+
+C:/msys64/ucrt64/include/math.h:
 
 C:/msys64/ucrt64/include/process.h:
 
@@ -880,6 +935,8 @@ E:/Programming/SFML/entity.inl:
 E:/Programming/SFML/game.inl:
 
 E:/Programming/SFML/global.h:
+
+E:/Programming/SFML/player.hpp:
 
 E:/Programming/SFML/resource_holder.hpp:
 

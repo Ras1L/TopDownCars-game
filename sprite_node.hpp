@@ -10,6 +10,8 @@ public:
     explicit SpriteNode(const sf::Texture&);
              SpriteNode(const sf::Texture&, const sf::IntRect&);
 
+    virtual unsigned int getCategory() const override final;
+
 public:
     virtual void drawCurrent(sf::RenderTarget&, sf::RenderStates&) const override;
 

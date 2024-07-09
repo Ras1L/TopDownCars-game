@@ -18,14 +18,15 @@ void Game::run()
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
     while (mWindow.isOpen()){
         
-        processEvents();
+        processInput();
+
         timeSinceLastUpdate += clock.restart();
 
         while (timeSinceLastUpdate > TimePerFrame)
         {
             timeSinceLastUpdate -= TimePerFrame;
-            processEvents();
-            update(TimePerFrame);
+            processInput();
+            mWorld.update(TimePerFrame);
         }
         render();
     }
@@ -52,6 +53,22 @@ void Game::processEvents()
     }
 }
 
+void Game::processInput()
+{
+    CommandQueue& commands = mWorld.getCommandQueue();
+
+    sf::Event event;
+    while (mWindow.pollEvent(event))
+    {
+        mPlayer.handleEvent(event, commands);
+
+        if (event.type == sf::Event::Closed){
+            mWindow.close();
+        }
+    }
+    mPlayer.handleRealtimeInput(commands);
+}
+
 void Game::update(sf::Time elapsedTime)
 {
     sf::Vector2f movement(0.f, 0.f);
@@ -68,7 +85,7 @@ void Game::update(sf::Time elapsedTime)
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
         movement.x -= PlayerSpeed;
     }
-    mPlayer.move(movement * elapsedTime.asSeconds());
+    // mPlayer.move(movement * elapsedTime.asSeconds());
 }
 
 // void Game::update(sf::Time deltaTime)

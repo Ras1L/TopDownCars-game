@@ -18,6 +18,8 @@ public:
 
     virtual void drawCurrent(sf::RenderTarget&, sf::RenderStates&) const override;
 
+    virtual unsigned int getCategory() const override;
+
 private:
     Type mType;
     sf::Sprite mSprite;

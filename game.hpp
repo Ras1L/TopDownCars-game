@@ -2,6 +2,7 @@
 #define GAME_HPP
 
 #include "world.hpp"
+#include "player.hpp"
 
 // Main class of the game
 class Game
@@ -13,6 +14,7 @@ public:
 
 private:
     void processEvents();
+    void processInput();
     void handlePlayerInput(sf::Keyboard::Key, bool); 
 
     void update(sf::Time);
@@ -21,11 +23,9 @@ private:
 
 private:
     sf::RenderWindow mWindow;
-
-    World mWorld;
-    sf::Sprite mPlayer;
-
-    TextureHolder textureManager;
+    World            mWorld;
+    Player           mPlayer;
+    TextureHolder    textureManager;
 
     // Flag of the movement
     bool                    mIsMovingUp    = false, 

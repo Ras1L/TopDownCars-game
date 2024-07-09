@@ -11,6 +11,11 @@ public:
 
     sf::Vector2f getVelocity() const;
 
+    void accelerate(sf::Vector2f);
+    void accelerate(float, float);
+
+    virtual unsigned int getCategory() const override;
+
 private:
     virtual void updateCurrent(sf::Time);
 

@@ -18,7 +18,7 @@ namespace Textures
 }
 
 // Speed of player
-float PlayerSpeed = 300.f;
+float PlayerSpeed = 70.f;
 
 // FPS (Frame per second)
 const sf::Time TimePerFrame = sf::seconds(1.f/60.f);

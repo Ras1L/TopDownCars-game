@@ -1,4 +1,5 @@
 #include "world.hpp"
+#include <math.h>
 
 World::World(sf::RenderWindow& window)
 : mWindow(window)
@@ -11,9 +12,9 @@ World::World(sf::RenderWindow& window)
     )
 , mSpawnPosition(
         mWorldView.getSize().x / 2.f,                // X
-        mWorldBounds.height - mWorldView.getSize().y // Y
+        mWorldBounds.height// - mWorldView.getSize().y // Y
     )
-, mScrollSpeed(40.f)
+, mScrollSpeed(-100.f)
 , mPlayerCar(nullptr)
 {
     loadTextures();
@@ -21,6 +22,7 @@ World::World(sf::RenderWindow& window)
 
     mWorldView.setCenter(mSpawnPosition);
 }
+
 
 void World::loadTextures()
 {
@@ -48,6 +50,8 @@ void World::buildScene()
         mWorldBounds.left,
         mWorldBounds.top
     );
+    // backgroundSprite->setPosition(mWorldBounds.left + mWorldBounds.width, mWorldBounds.top);
+    // backgroundSprite->setRotation(90.f);
     mSceneLayers[Background]->attachChild(std::move(backgroundSprite));
 
     std::shared_ptr<Car> leader(new Car(Car::Challenger, mTextureManager));
@@ -56,13 +60,14 @@ void World::buildScene()
     mPlayerCar->setVelocity(40.f, mScrollSpeed);
     mSceneLayers[Road]->attachChild(std::move(leader));
 
-    std::unique_ptr<Car> leftEscort(new Car(Car::Raptor, mTextureManager));
-    leftEscort->setPosition(-80.f, 50.f);
-    mPlayerCar->attachChild(std::move(leftEscort));
+    // Escort cars
+    // std::unique_ptr<Car> leftEscort(new Car(Car::Raptor, mTextureManager));
+    // leftEscort->setPosition(-80.f, 50.f);
+    // mPlayerCar->attachChild(std::move(leftEscort));
 
-    std::unique_ptr<Car> rightEscort(new Car(Car::Raptor, mTextureManager));
-    rightEscort->setPosition(180.f, 50.f);
-    mPlayerCar->attachChild(std::move(rightEscort));
+    // std::unique_ptr<Car> rightEscort(new Car(Car::Raptor, mTextureManager));
+    // rightEscort->setPosition(180.f, 50.f);
+    // mPlayerCar->attachChild(std::move(rightEscort));
 }
 
 void World::draw()
@@ -73,23 +78,41 @@ void World::draw()
 
 void World::update(sf::Time deltaTime)
 {
+    // View scrolling
     mWorldView.move(0.f, mScrollSpeed * deltaTime.asSeconds());
+    mPlayerCar->setVelocity(0.f, 0.f);
 
-    sf::Vector2f position = mPlayerCar->getPosition();
-    sf::Vector2f velocity = mPlayerCar->getVelocity();
-
-    if (position.x <= mWorldBounds.left + 150 || 
-        position.x >= mWorldBounds.left + mWorldBounds.width - 150)
-    {
-        velocity.x -= velocity.x;
-        mPlayerCar->setVelocity(velocity);
-    }
-
+    // Receiving commands
     while (!mCommandQueue.isEmpty()){
         mSceneGraph.onCommand(mCommandQueue.pop(), deltaTime);
     }
 
+    // After execute commands
+    sf::Vector2f velocity = mPlayerCar->getVelocity();
+    if (velocity.x != 0.f 
+     && velocity.y != 0.f)
+    {
+        mPlayerCar->setVelocity(velocity/std::sqrt(2.f));
+    }
+    mPlayerCar->accelerate(0.f, mScrollSpeed);
+
+    // Regular update step
     mSceneGraph.update(deltaTime);
+
+    // Compute the rectangle of the current view
+    sf::FloatRect viewBounds(
+        mWorldView.getCenter() - mWorldView.getSize() / 2.f, // position (left, top)     = 0.f, 0.f
+        mWorldView.getSize()                                 // size     (width, height) = width, height of mWorldBounds
+    );
+    const float borderDistance = 50.f;
+
+    // Handle the case where car leaves visible area
+    sf::Vector2f position = mPlayerCar->getPosition();
+    position.x = std::max(position.x, viewBounds.left + borderDistance);                    // |__
+    position.x = std::min(position.x, viewBounds.left + viewBounds.width  - borderDistance);//  __|
+    position.y = std::max(position.y, viewBounds.top  + borderDistance);                    // |¯¯
+    position.y = std::min(position.y, viewBounds.top  + viewBounds.height - borderDistance);// |__
+    mPlayerCar->setPosition(position);
 }
 
 CommandQueue& World::getCommandQueue()
