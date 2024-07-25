@@ -2,6 +2,8 @@
 #include <array>
 #include <memory>
 #include <algorithm>
+#include <map>
+#include "functional"
 
 struct S
 {
@@ -39,7 +41,19 @@ int main(){
 
     /////////////////
 
-    printf("%d", (255 | 200 | 100));
+    // printf("%d", (255 | 200 | 100));
+
+    /////////////////
+
+    // std::array<int, 5> arr{1,2,3,4,5};
+    // std::for_each(arr.rbegin(), arr.rend(), [](auto num){
+    //     printf("%d", num);
+    // });
+
+    /////////////////
+
+    int x = -1;
+    std::cout << (x-1) % 2 << '\n';
 
     return 0;
 }

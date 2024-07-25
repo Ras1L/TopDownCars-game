@@ -12,9 +12,9 @@ World::World(sf::RenderWindow& window)
     )
 , mSpawnPosition(
         mWorldView.getSize().x / 2.f,                // X
-        mWorldBounds.height// - mWorldView.getSize().y // Y
+        mWorldBounds.height // - mWorldView.getSize().y // Y
     )
-, mScrollSpeed(-100.f)
+, mScrollSpeed(-200.f)
 , mPlayerCar(nullptr)
 {
     loadTextures();
@@ -27,14 +27,14 @@ World::World(sf::RenderWindow& window)
 void World::loadTextures()
 {
     mTextureManager.load(Textures::Challenger, TEXTURE_DIR + "challenger.png");
-    mTextureManager.load(Textures::Raptor    , TEXTURE_DIR + "raptor.png");
+    // mTextureManager.load(Textures::Raptor    , TEXTURE_DIR + "raptor.png");
     mTextureManager.load(Textures::Landscape , TEXTURE_DIR + "landscape.png");
 }
 
 void World::buildScene()
 {
     for (int i = 0; i < LayerCount; ++i){
-        SceneNode::Ptr layer(new SceneNode());
+        auto layer = std::make_shared<SceneNode>();
         mSceneLayers[i] = layer;
 
         mSceneGraph.attachChild(std::move(layer));
@@ -44,23 +44,21 @@ void World::buildScene()
     sf::IntRect  textureRect(mWorldBounds);
     texture.setRepeated(true);
 
-    std::shared_ptr<SpriteNode> backgroundSprite(new SpriteNode(texture, textureRect));
+    auto backgroundSprite = std::make_shared<SpriteNode>(texture, textureRect);
     backgroundSprite->setPosition
     (
         mWorldBounds.left,
         mWorldBounds.top
     );
-    // backgroundSprite->setPosition(mWorldBounds.left + mWorldBounds.width, mWorldBounds.top);
-    // backgroundSprite->setRotation(90.f);
     mSceneLayers[Background]->attachChild(std::move(backgroundSprite));
 
-    std::shared_ptr<Car> leader(new Car(Car::Challenger, mTextureManager));
+    auto leader = std::make_shared<Car>(Car::Challenger, mTextureManager);
     mPlayerCar = leader;
     mPlayerCar->setPosition(mSpawnPosition);
     mPlayerCar->setVelocity(40.f, mScrollSpeed);
     mSceneLayers[Road]->attachChild(std::move(leader));
 
-    // Escort cars
+    //Escort cars
     // std::unique_ptr<Car> leftEscort(new Car(Car::Raptor, mTextureManager));
     // leftEscort->setPosition(-80.f, 50.f);
     // mPlayerCar->attachChild(std::move(leftEscort));
@@ -113,6 +111,21 @@ void World::update(sf::Time deltaTime)
     position.y = std::max(position.y, viewBounds.top  + borderDistance);                    // |¯¯
     position.y = std::min(position.y, viewBounds.top  + viewBounds.height - borderDistance);// |__
     mPlayerCar->setPosition(position);
+}
+
+void World::processInput()
+{
+    sf::Event event;
+    while (mWindow.pollEvent(event))
+    {
+        mPlayer.handleEvent(event, mCommandQueue);
+
+        if (event.type == sf::Event::Closed)
+        {
+            mWindow.close();
+        }
+    }
+    mPlayer.handleRealtimeInput(mCommandQueue);
 }
 
 CommandQueue& World::getCommandQueue()

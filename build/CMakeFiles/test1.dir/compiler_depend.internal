@@ -295,16 +295,22 @@ CMakeFiles/test1.dir/main.cpp.obj
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stddef.h
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint.h
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/syslimits.h
+ E:/Programming/SFML/app.hpp
+ E:/Programming/SFML/app.inl
+ E:/Programming/SFML/button.hpp
+ E:/Programming/SFML/button.inl
  E:/Programming/SFML/car.hpp
  E:/Programming/SFML/car.inl
  E:/Programming/SFML/category.h
  E:/Programming/SFML/command_queue.hpp
  E:/Programming/SFML/command_queue.inl
+ E:/Programming/SFML/display.hpp
+ E:/Programming/SFML/display.inl
  E:/Programming/SFML/entity.hpp
  E:/Programming/SFML/entity.inl
- E:/Programming/SFML/game.hpp
- E:/Programming/SFML/game.inl
  E:/Programming/SFML/global.h
+ E:/Programming/SFML/menu.hpp
+ E:/Programming/SFML/menu.inl
  E:/Programming/SFML/player.hpp
  E:/Programming/SFML/player.inl
  E:/Programming/SFML/resource_holder.hpp

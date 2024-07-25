@@ -5,6 +5,7 @@
 #include "sprite_node.hpp"
 #include "car.hpp"
 #include "command_queue.hpp"
+#include "player.hpp"
 
 #include <array>
 
@@ -15,6 +16,7 @@ public:
 
     void update(sf::Time);
     void draw();
+    void processInput();
 
     CommandQueue& getCommandQueue();
 
@@ -27,6 +29,7 @@ private:
     {
         Background,
         Road,
+        
         LayerCount
     };
 
@@ -42,6 +45,7 @@ private:
     sf::Vector2f                           mSpawnPosition;
     float                                  mScrollSpeed;
     std::shared_ptr<Car>                   mPlayerCar;
+    Player                                 mPlayer;
 };
 
 

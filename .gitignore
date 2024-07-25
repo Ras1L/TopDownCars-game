@@ -1,6 +1,10 @@
 .vscode/
 src/
 
+test.cpp
+
 a.exe
 
 *.bat
+
+*.drawio

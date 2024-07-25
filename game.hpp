@@ -13,23 +13,14 @@ public:
     void run();
 
 private:
-    void processEvents();
     void processInput();
-    void handlePlayerInput(sf::Keyboard::Key, bool); 
-
-    void update(sf::Time);
-
     void render();
 
 private:
     sf::RenderWindow mWindow;
     World            mWorld;
     Player           mPlayer;
-    TextureHolder    textureManager;
-
-    // Flag of the movement
-    bool                    mIsMovingUp    = false, 
-    mIsMovingLeft  = false, mIsMovingDown  = false, mIsMovingRight = false;
+    // TextureHolder    textureManager;
 };
 
 #include "game.inl"

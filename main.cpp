@@ -1,11 +1,11 @@
-#include "game.hpp"
+#include "app.hpp"
 
 int main(){
 
     try 
     {
-        Game game;
-        game.run();
+        Application app;
+        app.run();
     } 
     catch (std::exception& e)
     {

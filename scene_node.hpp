@@ -31,7 +31,7 @@ private:
     void         updateChildren(sf::Time);
 
 private:
-    virtual void draw(sf::RenderTarget&, sf::RenderStates) const override final;
+    virtual void draw(sf::RenderTarget&, sf::RenderStates) const override;
 
     virtual void drawCurrent(sf::RenderTarget&, sf::RenderStates&) const;
     void         drawChildren(sf::RenderTarget&, sf::RenderStates&) const;

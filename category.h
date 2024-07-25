@@ -10,6 +10,8 @@ namespace Category
         PlayerCar = 1 << 1,
         AlliedCar = 1 << 2,
         EnemyCar  = 1 << 3,
+
+        Button    = 1 << 4
     };
 
     unsigned int AnyCar = PlayerCar 

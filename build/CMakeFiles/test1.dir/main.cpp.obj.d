@@ -1,6 +1,7 @@
 CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
- E:/Programming/SFML/game.hpp E:/Programming/SFML/world.hpp \
- E:/Programming/SFML/resource_holder.hpp E:/Programming/SFML/global.h \
+ E:/Programming/SFML/app.hpp E:/Programming/SFML/menu.hpp \
+ E:/Programming/SFML/button.hpp E:/Programming/SFML/scene_node.hpp \
+ E:/Programming/SFML/global.h \
  C:/Program\ Files/SFML-2.6.1/include/SFML/Graphics.hpp \
  C:/Program\ Files/SFML-2.6.1/include/SFML/Window.hpp \
  C:/Program\ Files/SFML-2.6.1/include/SFML/System.hpp \
@@ -253,28 +254,30 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_lockfree_defines.h \
  C:/msys64/ucrt64/include/c++/13.2.0/backward/auto_ptr.h \
  C:/msys64/ucrt64/include/c++/13.2.0/pstl/glue_memory_defs.h \
+ C:/msys64/ucrt64/include/assert.h E:/Programming/SFML/category.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/functional \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/std_function.h \
  C:/msys64/ucrt64/include/c++/13.2.0/unordered_map \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/unordered_map.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/hashtable.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/hashtable_policy.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/enable_special_members.h \
- E:/Programming/SFML/resource_holder.inl \
- C:/msys64/ucrt64/include/assert.h E:/Programming/SFML/sprite_node.hpp \
- E:/Programming/SFML/scene_node.hpp E:/Programming/SFML/category.h \
- C:/msys64/ucrt64/include/c++/13.2.0/functional \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/std_function.h \
  C:/msys64/ucrt64/include/c++/13.2.0/array \
  C:/msys64/ucrt64/include/c++/13.2.0/compare \
- E:/Programming/SFML/scene_node.inl E:/Programming/SFML/sprite_node.inl \
- E:/Programming/SFML/car.hpp E:/Programming/SFML/entity.hpp \
- E:/Programming/SFML/entity.inl E:/Programming/SFML/car.inl \
- E:/Programming/SFML/command_queue.hpp \
+ E:/Programming/SFML/scene_node.inl \
+ E:/Programming/SFML/resource_holder.hpp \
+ E:/Programming/SFML/resource_holder.inl E:/Programming/SFML/button.inl \
+ E:/Programming/SFML/world.hpp E:/Programming/SFML/sprite_node.hpp \
+ E:/Programming/SFML/sprite_node.inl E:/Programming/SFML/car.hpp \
+ E:/Programming/SFML/entity.hpp E:/Programming/SFML/entity.inl \
+ E:/Programming/SFML/car.inl E:/Programming/SFML/command_queue.hpp \
  C:/msys64/ucrt64/include/c++/13.2.0/queue \
  C:/msys64/ucrt64/include/c++/13.2.0/deque \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_deque.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/deque.tcc \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_queue.h \
- E:/Programming/SFML/command_queue.inl E:/Programming/SFML/world.inl \
+ E:/Programming/SFML/command_queue.inl E:/Programming/SFML/player.hpp \
+ E:/Programming/SFML/player.inl E:/Programming/SFML/world.inl \
  C:/msys64/ucrt64/include/c++/13.2.0/math.h \
  C:/msys64/ucrt64/include/c++/13.2.0/cmath \
  C:/msys64/ucrt64/include/math.h \
@@ -292,5 +295,5 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
  C:/msys64/ucrt64/include/c++/13.2.0/tr1/poly_hermite.tcc \
  C:/msys64/ucrt64/include/c++/13.2.0/tr1/poly_laguerre.tcc \
  C:/msys64/ucrt64/include/c++/13.2.0/tr1/riemann_zeta.tcc \
- E:/Programming/SFML/player.hpp E:/Programming/SFML/player.inl \
- E:/Programming/SFML/game.inl
+ E:/Programming/SFML/display.hpp E:/Programming/SFML/display.inl \
+ E:/Programming/SFML/menu.inl E:/Programming/SFML/app.inl

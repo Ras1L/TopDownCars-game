@@ -36,7 +36,7 @@ void ResourceHolder<Resource, Identifier>
 }
 
 template <class Resource, class Identifier>
-sf::Texture& ResourceHolder<Resource, Identifier>
+Resource& ResourceHolder<Resource, Identifier>
 ::get(Identifier id)
 {
     auto found = mResourceMap.find(id);
@@ -46,7 +46,7 @@ sf::Texture& ResourceHolder<Resource, Identifier>
 }
 
 template <class Resource, class Identifier>
-const sf::Texture& ResourceHolder<Resource, Identifier>
+const Resource& ResourceHolder<Resource, Identifier>
 ::get(Identifier id) const
 {
     auto found = mResourceMap.find(id);

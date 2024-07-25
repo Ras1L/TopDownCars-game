@@ -72,3 +72,21 @@ bool Player::isRealtimeAction(Action action)
 {
     return true;
 }
+
+
+void Player::assignKey(Player::Action action, sf::Keyboard::Key key)
+{
+    mKeyBinding[key] = action;
+}
+
+sf::Keyboard::Key Player::getAssignKey(Player::Action action) const
+{
+    std::for_each(mKeyBinding.begin(), mKeyBinding.end(),
+    [action](auto& pair)
+    {
+        if (pair.second == action){
+            return pair.first;
+        }
+    });
+    return sf::Keyboard::Unknown;
+}

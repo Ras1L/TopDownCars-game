@@ -21,8 +21,8 @@ public:
     template<class Param>
     void load(id_type, const std::string&, const Param&);
 
-    sf::Texture&       get(id_type);
-    const sf::Texture& get(id_type) const;
+    resource_type&       get(id_type);
+    const resource_type& get(id_type) const;
 
 private:
     std::unordered_map
@@ -32,6 +32,7 @@ private:
 
 // type definition
 typedef ResourceHolder<sf::Texture, Textures::ID> TextureHolder;
+typedef ResourceHolder<sf::Font,    Fonts::ID>    FontHolder;
 
 #include "resource_holder.inl"
 

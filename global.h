@@ -5,7 +5,8 @@
 
 namespace Textures
 {
-    enum ID {
+    enum ID
+    {
         // Abstract textures
         Landscape,
         Car, 
@@ -13,7 +14,21 @@ namespace Textures
 
         // Textures for Car class
         Challenger,
-        Raptor
+        Raptor,
+
+        // GUI
+        Button,
+
+        TitleScreen,
+        Menu
+    };
+}
+
+namespace Fonts
+{
+    enum ID 
+    {
+        Label
     };
 }
 
