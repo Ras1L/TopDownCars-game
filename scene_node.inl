@@ -22,17 +22,17 @@ SceneNode::Ptr SceneNode::detachChild(const SceneNode& child)
 }
 
 
-sf::Transform SceneNode::getWorldTransform() // const
+sf::Transform SceneNode::getWorldTransform() const
 {
     sf::Transform transform = sf::Transform::Identity;
-    for (Ptr node = Ptr(this); node != nullptr; node = node->mParent)
+    for (cPtr node = cPtr(this); node != nullptr; node = node->mParent)
     {
         transform *= node->getTransform();
     }
     return transform;
 }
 
-sf::Vector2f SceneNode::getWorldPosition() // const
+sf::Vector2f SceneNode::getWorldPosition() const
 {
     return getWorldTransform() * sf::Vector2f();
 }
@@ -63,11 +63,11 @@ void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const
     drawChildren(target, states);
 }
 
-void SceneNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates& states) const
+void SceneNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
 {
 }
 
-void SceneNode::drawChildren(sf::RenderTarget& target, sf::RenderStates& states) const
+void SceneNode::drawChildren(sf::RenderTarget& target, sf::RenderStates states) const
 {
     std::for_each(mChildren.begin(), mChildren.end(), [&target, &states](Ptr node){
         node->draw(target, states);

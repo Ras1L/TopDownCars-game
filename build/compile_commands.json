@@ -1,0 +1,8 @@
+[
+{
+  "directory": "E:/Programming/SFML/build",
+  "command": "C:/msys64/ucrt64/bin/c++.exe  @CMakeFiles/test1.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles/test1.dir/main.cpp.obj -c E:/Programming/SFML/main.cpp",
+  "file": "E:/Programming/SFML/main.cpp",
+  "output": "CMakeFiles/test1.dir/main.cpp.obj"
+}
+]

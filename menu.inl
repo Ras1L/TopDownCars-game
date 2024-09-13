@@ -6,13 +6,18 @@ Menu::Menu(sf::RenderWindow& window)
 {
     mWindow.setKeyRepeatEnabled(false);
 
+    loadResources();
     buildMenu();
+}
+
+
+void Menu::loadResources()
+{
+    mTextureManager.load(Textures::Menu, TEXTURE_DIR + "background/dodge.png");
 }
 
 void Menu::buildMenu()
 {
-    mTextureManager.load(Textures::Menu, TEXTURE_DIR + "background_dodge.png");
-
     for (auto i = 0; i < Button::LabelCount; ++i)
     {
         mButtons[i] = std::move(std::make_shared<Button>());
@@ -32,10 +37,10 @@ void Menu::buildMenu()
     auto windowCenter = windowBounds.getCenter() / std::sqrt(2.f);
 
     mButtons[Button::Play]->setPosition(windowCenter.x, windowCenter.y);
-    mButtons[Button::Play]->setText("Play");
+    mButtons[Button::Play]->setString("Play");
 
     mButtons[Button::Exit]->setPosition(windowCenter.x, windowCenter.y + 100.f);
-    mButtons[Button::Exit]->setText("Exit");
+    mButtons[Button::Exit]->setString("Exit");
 
     mMenuScene.attachChild(mButtons[Button::Play]);
     mMenuScene.attachChild(mButtons[Button::Exit]);
@@ -71,13 +76,15 @@ void Menu::processInput()
             {
                 mButtonIndex = (mButtonIndex + Button::LabelCount - 1) % Button::LabelCount;
             }
+            else
+            {
+            }
 
             mButtons[mButtonIndex]->select(true); // next button
             
             
             if (event.key.code == sf::Keyboard::Enter)
             {
-                printf("Enter\n");
                 if (mButtons[Button::Play]->isSelected())
                 {
                     Play();
@@ -87,6 +94,9 @@ void Menu::processInput()
                 {
                     Exit();
                 }
+            }
+            else
+            {
             }
         }
         else if (event.type == sf::Event::Closed)

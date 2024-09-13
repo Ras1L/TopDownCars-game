@@ -1,7 +1,7 @@
 #ifndef SCENE_NODE_HPP
 #define SCENE_NODE_HPP
 
-class Command;
+struct Command;
 
 #include "global.h"
 #include <memory>
@@ -12,6 +12,7 @@ class SceneNode : public  sf::Transformable, public sf::Drawable,
 {
 public:
     using Ptr  = std::shared_ptr<SceneNode>;
+    using cPtr = std::shared_ptr<const SceneNode>;
 
 public:
     SceneNode() = default;
@@ -19,8 +20,8 @@ public:
     void attachChild(Ptr);
     Ptr  detachChild(const SceneNode&);
 
-    sf::Transform getWorldTransform();
-    sf::Vector2f  getWorldPosition();
+    sf::Transform getWorldTransform() const;
+    sf::Vector2f  getWorldPosition()  const;
 
     virtual unsigned int getCategory() const;
     void                 onCommand(const Command&, sf::Time);
@@ -33,8 +34,8 @@ private:
 private:
     virtual void draw(sf::RenderTarget&, sf::RenderStates) const override;
 
-    virtual void drawCurrent(sf::RenderTarget&, sf::RenderStates&) const;
-    void         drawChildren(sf::RenderTarget&, sf::RenderStates&) const;
+    virtual void drawCurrent(sf::RenderTarget&, sf::RenderStates) const;
+    void         drawChildren(sf::RenderTarget&, sf::RenderStates) const;
 
 private:
     std::vector<Ptr> mChildren;

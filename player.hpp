@@ -13,6 +13,9 @@ public:
         MoveRight,
         MoveLeft,
 
+        Fire,
+        LaunchMissile,
+
         ActionCount
     };
 
@@ -28,6 +31,8 @@ public:
 private:
     static bool isRealtimeAction(Action);
 
+    void initializeActions();
+
 private:
     std::unordered_map<sf::Keyboard::Key, Action> mKeyBinding;
     std::unordered_map<Action, Command>           mActionBinding;
@@ -38,7 +43,7 @@ std::function<void(SceneNode&, sf::Time)>
 derivedAction(Function func)
 {
     return
-    [=] (SceneNode& node, sf::Time deltaTime) -> void
+    [func] (SceneNode& node, sf::Time deltaTime) -> void
     {
         assert(dynamic_cast<GameObject*>(&node) != nullptr);
 

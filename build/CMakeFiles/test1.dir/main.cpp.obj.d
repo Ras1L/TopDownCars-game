@@ -1,7 +1,7 @@
 CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
  E:/Programming/SFML/app.hpp E:/Programming/SFML/menu.hpp \
- E:/Programming/SFML/button.hpp E:/Programming/SFML/scene_node.hpp \
- E:/Programming/SFML/global.h \
+ E:/Programming/SFML/button.hpp E:/Programming/SFML/text_node.hpp \
+ E:/Programming/SFML/scene_node.hpp E:/Programming/SFML/global.h \
  C:/Program\ Files/SFML-2.6.1/include/SFML/Graphics.hpp \
  C:/Program\ Files/SFML-2.6.1/include/SFML/Window.hpp \
  C:/Program\ Files/SFML-2.6.1/include/SFML/System.hpp \
@@ -47,6 +47,16 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
  C:/msys64/ucrt64/include/c++/13.2.0/type_traits \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/nested_exception.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/char_traits.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/compare \
+ C:/msys64/ucrt64/include/c++/13.2.0/concepts \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_construct.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_iterator_base_types.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/iterator_concepts.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/ptr_traits.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_cmp.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_iterator_base_funcs.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/concept_check.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/debug/assertions.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/localefwd.h \
  C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++locale.h \
  C:/msys64/ucrt64/include/c++/13.2.0/clocale \
@@ -81,13 +91,8 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/cpp_type_traits.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/ostream_insert.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/cxxabi_forced.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_iterator_base_funcs.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/concept_check.h \
- C:/msys64/ucrt64/include/c++/13.2.0/debug/assertions.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_iterator_base_types.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_iterator.h \
  C:/msys64/ucrt64/include/c++/13.2.0/ext/type_traits.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/ptr_traits.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_function.h \
  C:/msys64/ucrt64/include/c++/13.2.0/backward/binders.h \
  C:/msys64/ucrt64/include/c++/13.2.0/ext/numeric_traits.h \
@@ -104,9 +109,11 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/basic_string.h \
  C:/msys64/ucrt64/include/c++/13.2.0/ext/alloc_traits.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/alloc_traits.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_construct.h \
  C:/msys64/ucrt64/include/c++/13.2.0/string_view \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/functional_hash.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_base.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/max_size_type.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/numbers \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/string_view.tcc \
  C:/msys64/ucrt64/include/c++/13.2.0/ext/string_conversions.h \
  C:/msys64/ucrt64/include/c++/13.2.0/cstdlib \
@@ -125,6 +132,7 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/uses_allocator.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/uses_allocator_args.h \
  C:/msys64/ucrt64/include/c++/13.2.0/tuple \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_util.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/locale_classes.tcc \
  C:/msys64/ucrt64/include/c++/13.2.0/system_error \
  C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/error_constants.h \
@@ -156,6 +164,10 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_heap.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/uniform_int_dist.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_tempbuf.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_algo.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/optional \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/enable_special_members.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_algobase.h \
  C:/msys64/ucrt64/include/c++/13.2.0/pstl/glue_algorithm_defs.h \
  C:/msys64/ucrt64/include/c++/13.2.0/pstl/execution_defs.h \
  C:/msys64/ucrt64/include/c++/13.2.0/locale \
@@ -241,43 +253,6 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
  C:/Program\ Files/SFML-2.6.1/include/SFML/Graphics/Sprite.hpp \
  C:/Program\ Files/SFML-2.6.1/include/SFML/Graphics/Text.hpp \
  C:/Program\ Files/SFML-2.6.1/include/SFML/Graphics/VertexBuffer.hpp \
- C:/msys64/ucrt64/include/c++/13.2.0/memory \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_raw_storage_iter.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/align.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/unique_ptr.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr_base.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/allocated_ptr.h \
- C:/msys64/ucrt64/include/c++/13.2.0/ext/concurrence.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr_atomic.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_base.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_lockfree_defines.h \
- C:/msys64/ucrt64/include/c++/13.2.0/backward/auto_ptr.h \
- C:/msys64/ucrt64/include/c++/13.2.0/pstl/glue_memory_defs.h \
- C:/msys64/ucrt64/include/assert.h E:/Programming/SFML/category.h \
- C:/msys64/ucrt64/include/c++/13.2.0/functional \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/std_function.h \
- C:/msys64/ucrt64/include/c++/13.2.0/unordered_map \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/unordered_map.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/hashtable.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/hashtable_policy.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/enable_special_members.h \
- C:/msys64/ucrt64/include/c++/13.2.0/array \
- C:/msys64/ucrt64/include/c++/13.2.0/compare \
- E:/Programming/SFML/scene_node.inl \
- E:/Programming/SFML/resource_holder.hpp \
- E:/Programming/SFML/resource_holder.inl E:/Programming/SFML/button.inl \
- E:/Programming/SFML/world.hpp E:/Programming/SFML/sprite_node.hpp \
- E:/Programming/SFML/sprite_node.inl E:/Programming/SFML/car.hpp \
- E:/Programming/SFML/entity.hpp E:/Programming/SFML/entity.inl \
- E:/Programming/SFML/car.inl E:/Programming/SFML/command_queue.hpp \
- C:/msys64/ucrt64/include/c++/13.2.0/queue \
- C:/msys64/ucrt64/include/c++/13.2.0/deque \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_deque.h \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/deque.tcc \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_queue.h \
- E:/Programming/SFML/command_queue.inl E:/Programming/SFML/player.hpp \
- E:/Programming/SFML/player.inl E:/Programming/SFML/world.inl \
  C:/msys64/ucrt64/include/c++/13.2.0/math.h \
  C:/msys64/ucrt64/include/c++/13.2.0/cmath \
  C:/msys64/ucrt64/include/math.h \
@@ -295,5 +270,49 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
  C:/msys64/ucrt64/include/c++/13.2.0/tr1/poly_hermite.tcc \
  C:/msys64/ucrt64/include/c++/13.2.0/tr1/poly_laguerre.tcc \
  C:/msys64/ucrt64/include/c++/13.2.0/tr1/riemann_zeta.tcc \
- E:/Programming/SFML/display.hpp E:/Programming/SFML/display.inl \
- E:/Programming/SFML/menu.inl E:/Programming/SFML/app.inl
+ C:/msys64/ucrt64/include/c++/13.2.0/memory \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_raw_storage_iter.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/align.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/unique_ptr.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr_base.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/allocated_ptr.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/ext/concurrence.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr_atomic.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_base.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_lockfree_defines.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_wait.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/std_mutex.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/backward/auto_ptr.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_uninitialized.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/pstl/glue_memory_defs.h \
+ C:/msys64/ucrt64/include/assert.h E:/Programming/SFML/category.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/functional \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/std_function.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/unordered_map \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/unordered_map.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/hashtable.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/hashtable_policy.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/array \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/move_only_function.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/mofunc_impl.h \
+ E:/Programming/SFML/scene_node.inl \
+ E:/Programming/SFML/resource_holder.hpp \
+ E:/Programming/SFML/resource_holder.inl \
+ E:/Programming/SFML/text_node.inl E:/Programming/SFML/button.inl \
+ E:/Programming/SFML/world.hpp E:/Programming/SFML/sprite_node.hpp \
+ E:/Programming/SFML/sprite_node.inl E:/Programming/SFML/car.hpp \
+ E:/Programming/SFML/entity.hpp E:/Programming/SFML/entity.inl \
+ E:/Programming/SFML/command_queue.hpp \
+ C:/msys64/ucrt64/include/c++/13.2.0/queue \
+ C:/msys64/ucrt64/include/c++/13.2.0/deque \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_deque.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/deque.tcc \
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_queue.h \
+ E:/Programming/SFML/command_queue.inl E:/Programming/SFML/projectile.hpp \
+ E:/Programming/SFML/data_tables.hpp E:/Programming/SFML/data_tables.inl \
+ E:/Programming/SFML/projectile.inl E:/Programming/SFML/car.inl \
+ E:/Programming/SFML/player.hpp E:/Programming/SFML/player.inl \
+ E:/Programming/SFML/world.inl E:/Programming/SFML/display.hpp \
+ E:/Programming/SFML/display.inl E:/Programming/SFML/menu.inl \
+ E:/Programming/SFML/app.inl

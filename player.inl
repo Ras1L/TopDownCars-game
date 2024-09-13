@@ -7,29 +7,55 @@ Player::Player()
     mKeyBinding[sf::Keyboard::Right] = MoveRight;
     mKeyBinding[sf::Keyboard::Left]  = MoveLeft;
 
+    mKeyBinding[sf::Keyboard::Space] = Fire;
+    mKeyBinding[sf::Keyboard::M]     = LaunchMissile;
+
+    initializeActions();
+}
+
+void Player::initializeActions()
+{
     mActionBinding[MoveUp].action =
-    [](SceneNode& node, sf::Time deltaTime)
+    [](SceneNode& node, sf::Time deltaTime) -> void
     {
         node.move(0.f, -PlayerSpeed * deltaTime.asSeconds());
+        node.setRotation(0.f);
     };
 
     mActionBinding[MoveDown].action =
-    [](SceneNode& node, sf::Time deltaTime)
+    [](SceneNode& node, sf::Time deltaTime) -> void
     {
         node.move(0.f, PlayerSpeed * deltaTime.asSeconds());
     };
 
     mActionBinding[MoveRight].action =
-    [](SceneNode& node, sf::Time deltaTime)
+    [](SceneNode& node, sf::Time deltaTime) -> void
     {
         node.move(PlayerSpeed * deltaTime.asSeconds(), 0.f);
+        node.setRotation(10.f);
     };
 
     mActionBinding[MoveLeft].action =
-    [](SceneNode& node, sf::Time deltaTime)
+    [](SceneNode& node, sf::Time deltaTime) -> void
     {
         node.move(-PlayerSpeed * deltaTime.asSeconds(), 0.f);
+        node.setRotation(-10.f);
     };
+
+    // mActionBinding[Fire].action = derivedAction<Car>([](SceneNode& node, sf::Time deltaTime){
+    //     Car::fire;
+    // });
+    // mActionBinding[LaunchMissile].action = derivedAction<Car>([](SceneNode& node, sf::Time deltaTime){
+    //     Car::launchMissile;
+    // });
+
+    // using namespace std::placeholders;
+    // mActionBinding[Fire].action          = derivedAction<Car>(std::bind(&Car::fire, _1));
+    // mActionBinding[LaunchMissile].action = derivedAction<Car>(std::bind(&Car::launchMissile, _1));
+
+
+    /// both variants not working // move logic to that class! ///
+
 
     std::for_each(mActionBinding.begin(), mActionBinding.end(),
     [](auto& pair) -> void
@@ -46,7 +72,7 @@ void Player::handleEvent(const sf::Event& event, CommandQueue& commands)
     {
         Command output;
         output.category = Category::PlayerCar;
-        output.action   = [](SceneNode& node, sf::Time deltaTime)
+        output.action   = [](SceneNode& node, sf::Time deltaTime) -> void
         {
             printf("X pos: %d, ", "Y pos: %d\n",
                    node.getPosition().x, 
@@ -70,7 +96,21 @@ void Player::handleRealtimeInput(CommandQueue& commands)
 
 bool Player::isRealtimeAction(Action action)
 {
-    return true;
+    switch (action)
+    {
+        case MoveUp:
+        case MoveDown:
+        case MoveRight:
+        case MoveLeft:
+        case Fire:
+            return true;
+        
+        case LaunchMissile:
+            return false;
+
+        default:
+            return false;
+    }
 }
 
 

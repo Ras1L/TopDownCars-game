@@ -97,6 +97,7 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/allocator.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_base.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_lockfree_defines.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_wait.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/basic_ios.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/basic_ios.tcc \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/basic_string.h \
@@ -121,6 +122,7 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/hashtable_policy.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/invoke.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/ios_base.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/iterator_concepts.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/locale_classes.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/locale_classes.tcc \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/locale_conv.h \
@@ -129,9 +131,12 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/locale_facets_nonio.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/locale_facets_nonio.tcc \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/localefwd.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/max_size_type.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/memory_resource.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/memoryfwd.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/mofunc_impl.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/move.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/move_only_function.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/nested_exception.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/new_allocator.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/node_handle.h \
@@ -141,6 +146,12 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/predefined_ops.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/ptr_traits.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/range_access.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_algo.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_algobase.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_base.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_cmp.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_uninitialized.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_util.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/refwrap.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/requires_hosted.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr.h \
@@ -149,6 +160,7 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/specfun.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/std_abs.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/std_function.h \
+  C:/msys64/ucrt64/include/c++/13.2.0/bits/std_mutex.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_algo.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_algobase.h \
   C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_bvector.h \
@@ -185,6 +197,7 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/clocale \
   C:/msys64/ucrt64/include/c++/13.2.0/cmath \
   C:/msys64/ucrt64/include/c++/13.2.0/compare \
+  C:/msys64/ucrt64/include/c++/13.2.0/concepts \
   C:/msys64/ucrt64/include/c++/13.2.0/cstddef \
   C:/msys64/ucrt64/include/c++/13.2.0/cstdio \
   C:/msys64/ucrt64/include/c++/13.2.0/cstdlib \
@@ -213,6 +226,8 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   C:/msys64/ucrt64/include/c++/13.2.0/math.h \
   C:/msys64/ucrt64/include/c++/13.2.0/memory \
   C:/msys64/ucrt64/include/c++/13.2.0/new \
+  C:/msys64/ucrt64/include/c++/13.2.0/numbers \
+  C:/msys64/ucrt64/include/c++/13.2.0/optional \
   C:/msys64/ucrt64/include/c++/13.2.0/ostream \
   C:/msys64/ucrt64/include/c++/13.2.0/pstl/execution_defs.h \
   C:/msys64/ucrt64/include/c++/13.2.0/pstl/glue_algorithm_defs.h \
@@ -303,6 +318,8 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   E:/Programming/SFML/category.h \
   E:/Programming/SFML/command_queue.hpp \
   E:/Programming/SFML/command_queue.inl \
+  E:/Programming/SFML/data_tables.hpp \
+  E:/Programming/SFML/data_tables.inl \
   E:/Programming/SFML/display.hpp \
   E:/Programming/SFML/display.inl \
   E:/Programming/SFML/entity.hpp \
@@ -312,12 +329,16 @@ CMakeFiles/test1.dir/main.cpp.obj: E:/Programming/SFML/main.cpp \
   E:/Programming/SFML/menu.inl \
   E:/Programming/SFML/player.hpp \
   E:/Programming/SFML/player.inl \
+  E:/Programming/SFML/projectile.hpp \
+  E:/Programming/SFML/projectile.inl \
   E:/Programming/SFML/resource_holder.hpp \
   E:/Programming/SFML/resource_holder.inl \
   E:/Programming/SFML/scene_node.hpp \
   E:/Programming/SFML/scene_node.inl \
   E:/Programming/SFML/sprite_node.hpp \
   E:/Programming/SFML/sprite_node.inl \
+  E:/Programming/SFML/text_node.hpp \
+  E:/Programming/SFML/text_node.inl \
   E:/Programming/SFML/world.hpp \
   E:/Programming/SFML/world.inl
 
@@ -351,6 +372,8 @@ C:/Program\ Files/SFML-2.6.1/include/SFML/Graphics.hpp:
 C:/Program\ Files/SFML-2.6.1/include/SFML/Graphics/CircleShape.hpp:
 
 C:/msys64/ucrt64/include/pthread_signal.h:
+
+C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_cmp.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/exception.h:
 
@@ -570,6 +593,8 @@ C:/msys64/ucrt64/include/_timeval.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/streambuf:
 
+C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_base.h:
+
 C:/msys64/ucrt64/include/assert.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/algorithm:
@@ -592,11 +617,15 @@ C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_base.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_lockfree_defines.h:
 
+C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_wait.h:
+
 C:/msys64/ucrt64/include/c++/13.2.0/string:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/basic_ios.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/basic_ios.tcc:
+
+E:/Programming/SFML/data_tables.hpp:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/basic_string.h:
 
@@ -648,9 +677,15 @@ C:/msys64/ucrt64/include/c++/13.2.0/bits/invoke.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/ios_base.h:
 
+E:/Programming/SFML/command_queue.inl:
+
+C:/msys64/ucrt64/include/c++/13.2.0/bits/iterator_concepts.h:
+
 C:/msys64/ucrt64/include/c++/13.2.0/bits/nested_exception.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/locale_classes.h:
+
+C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_util.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/locale_classes.tcc:
 
@@ -666,6 +701,8 @@ C:/msys64/ucrt64/include/c++/13.2.0/cctype:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/localefwd.h:
 
+C:/msys64/ucrt64/include/c++/13.2.0/bits/max_size_type.h:
+
 C:/msys64/ucrt64/include/c++/13.2.0/cmath:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_algobase.h:
@@ -674,9 +711,13 @@ C:/msys64/ucrt64/include/c++/13.2.0/bits/memory_resource.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/memoryfwd.h:
 
+C:/msys64/ucrt64/include/c++/13.2.0/bits/mofunc_impl.h:
+
 C:/msys64/ucrt64/include/c++/13.2.0/tuple:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/move.h:
+
+C:/msys64/ucrt64/include/c++/13.2.0/bits/move_only_function.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/error_constants.h:
 
@@ -696,6 +737,14 @@ C:/msys64/ucrt64/include/limits.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/range_access.h:
 
+C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_algo.h:
+
+C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_raw_storage_iter.h:
+
+C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_algobase.h:
+
+C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_uninitialized.h:
+
 C:/msys64/ucrt64/include/c++/13.2.0/bits/refwrap.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/shared_ptr.h:
@@ -707,6 +756,8 @@ C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_function.h:
 C:/msys64/ucrt64/include/c++/13.2.0/bits/std_abs.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/std_function.h:
+
+C:/msys64/ucrt64/include/c++/13.2.0/bits/std_mutex.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_bvector.h:
 
@@ -729,8 +780,6 @@ C:/msys64/ucrt64/include/c++/13.2.0/exception:
 C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_pair.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_queue.h:
-
-C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_raw_storage_iter.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_tempbuf.h:
 
@@ -762,9 +811,13 @@ C:/msys64/ucrt64/include/c++/13.2.0/cwctype:
 
 C:/msys64/ucrt64/include/c++/13.2.0/clocale:
 
+C:/msys64/ucrt64/include/c++/13.2.0/concepts:
+
 C:/msys64/ucrt64/include/c++/13.2.0/cstddef:
 
 C:/msys64/ucrt64/include/c++/13.2.0/cstdio:
+
+E:/Programming/SFML/text_node.hpp:
 
 C:/msys64/ucrt64/include/c++/13.2.0/cstdlib:
 
@@ -805,6 +858,10 @@ C:/msys64/ucrt64/include/c++/13.2.0/math.h:
 C:/msys64/ucrt64/include/c++/13.2.0/tr1/bessel_function.tcc:
 
 C:/msys64/ucrt64/include/c++/13.2.0/memory:
+
+C:/msys64/ucrt64/include/c++/13.2.0/numbers:
+
+C:/msys64/ucrt64/include/c++/13.2.0/optional:
 
 C:/msys64/ucrt64/include/c++/13.2.0/ostream:
 
@@ -857,6 +914,8 @@ C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/atomic_word.h:
 E:/Programming/SFML/sprite_node.hpp:
 
 C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++allocator.h:
+
+E:/Programming/SFML/projectile.hpp:
 
 E:/Programming/SFML/entity.hpp:
 
@@ -940,11 +999,13 @@ E:/Programming/SFML/car.inl:
 
 E:/Programming/SFML/command_queue.hpp:
 
-E:/Programming/SFML/command_queue.inl:
+E:/Programming/SFML/data_tables.inl:
 
 E:/Programming/SFML/display.hpp:
 
 E:/Programming/SFML/display.inl:
+
+E:/Programming/SFML/projectile.inl:
 
 E:/Programming/SFML/entity.inl:
 
@@ -959,3 +1020,5 @@ E:/Programming/SFML/player.hpp:
 E:/Programming/SFML/resource_holder.hpp:
 
 E:/Programming/SFML/scene_node.inl:
+
+E:/Programming/SFML/text_node.inl:

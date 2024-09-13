@@ -18,9 +18,11 @@ public:
     void update(sf::Time);
     void processInput();
 
+private:
     void buildMenu();
+    void loadResources();
 
-public:
+private:
     void Play();
     void Exit();
 

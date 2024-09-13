@@ -1,5 +1,4 @@
 #include "world.hpp"
-#include <math.h>
 
 World::World(sf::RenderWindow& window)
 : mWindow(window)
@@ -8,31 +7,39 @@ World::World(sf::RenderWindow& window)
         0.f,                    // left X position
         0.f,                    // top  Y position
         mWorldView.getSize().x, // width
-        2000.f                  // height
+        20000.f                 // height
     )
 , mSpawnPosition(
         mWorldView.getSize().x / 2.f,                // X
-        mWorldBounds.height // - mWorldView.getSize().y // Y
+        mWorldBounds.height - 400.f// - mWorldView.getSize().y // Y
     )
-, mScrollSpeed(-200.f)
+, mScrollSpeed(-500.f)
 , mPlayerCar(nullptr)
 {
-    loadTextures();
+    loadResources();
     buildScene();
 
     mWorldView.setCenter(mSpawnPosition);
 }
 
 
-void World::loadTextures()
+void World::loadResources()
 {
-    mTextureManager.load(Textures::Challenger, TEXTURE_DIR + "challenger.png");
-    // mTextureManager.load(Textures::Raptor    , TEXTURE_DIR + "raptor.png");
-    mTextureManager.load(Textures::Landscape , TEXTURE_DIR + "landscape.png");
+    mTextureManager.load(Textures::Challenger, TEXTURE_DIR + "car/challenger.png");
+    mTextureManager.load(Textures::Raptor    , TEXTURE_DIR + "car/raptor.png");
+    mTextureManager.load(Textures::Viper     , TEXTURE_DIR + "car/viper.png");
+    mTextureManager.load(Textures::Landscape , TEXTURE_DIR + "background/landscape.png");
+
+    mTextureManager.load(Textures::AlliedBullet, TEXTURE_DIR + "projectile/allied_bullet.png");
+    mTextureManager.load(Textures::EnemyBullet , TEXTURE_DIR + "projectile/enemy_bullet.png");
+    mTextureManager.load(Textures::Missile     , TEXTURE_DIR + "projectile/missile.png");
+
+    mFontManager.load(Fonts::Label, FONT_DIR + "strogiy.otf");
 }
 
 void World::buildScene()
 {
+    // Layers initialization
     for (int i = 0; i < LayerCount; ++i){
         auto layer = std::make_shared<SceneNode>();
         mSceneLayers[i] = layer;
@@ -40,6 +47,7 @@ void World::buildScene()
         mSceneGraph.attachChild(std::move(layer));
     }
 
+    // Background
     sf::Texture& texture = mTextureManager.get(Textures::Landscape);
     sf::IntRect  textureRect(mWorldBounds);
     texture.setRepeated(true);
@@ -52,13 +60,17 @@ void World::buildScene()
     );
     mSceneLayers[Background]->attachChild(std::move(backgroundSprite));
 
-    auto leader = std::make_shared<Car>(Car::Challenger, mTextureManager);
+    // Player Car
+    auto leader = std::make_shared<Car>(Car::Challenger, mTextureManager, mFontManager);
     mPlayerCar = leader;
     mPlayerCar->setPosition(mSpawnPosition);
     mPlayerCar->setVelocity(40.f, mScrollSpeed);
     mSceneLayers[Road]->attachChild(std::move(leader));
 
-    //Escort cars
+    // Enemies cars
+    addEnemies();
+
+    // Escort cars
     // std::unique_ptr<Car> leftEscort(new Car(Car::Raptor, mTextureManager));
     // leftEscort->setPosition(-80.f, 50.f);
     // mPlayerCar->attachChild(std::move(leftEscort));
@@ -93,25 +105,133 @@ void World::update(sf::Time deltaTime)
         mPlayerCar->setVelocity(velocity/std::sqrt(2.f));
     }
     mPlayerCar->accelerate(0.f, mScrollSpeed);
+    mPlayerCar->update(deltaTime, mCommandQueue);
+
+    // Spawn enemies
+    spawnEnemies();
 
     // Regular update step
     mSceneGraph.update(deltaTime);
+    updateEnemies(deltaTime);
 
     // Compute the rectangle of the current view
     sf::FloatRect viewBounds(
         mWorldView.getCenter() - mWorldView.getSize() / 2.f, // position (left, top)     = 0.f, 0.f
         mWorldView.getSize()                                 // size     (width, height) = width, height of mWorldBounds
     );
-    const float borderDistance = 50.f;
 
     // Handle the case where car leaves visible area
+    const float borderDistance = 100.f;
     sf::Vector2f position = mPlayerCar->getPosition();
-    position.x = std::max(position.x, viewBounds.left + borderDistance);                    // |__
-    position.x = std::min(position.x, viewBounds.left + viewBounds.width  - borderDistance);//  __|
-    position.y = std::max(position.y, viewBounds.top  + borderDistance);                    // |¯¯
-    position.y = std::min(position.y, viewBounds.top  + viewBounds.height - borderDistance);// |__
+    position.x = std::max(position.x, viewBounds.left + borderDistance);                            // |__
+    position.x = std::min(position.x, viewBounds.left + viewBounds.width  - borderDistance);        //  __|
+    position.y = std::max(position.y, viewBounds.top  + borderDistance + 200.f);                    // |¯¯
+    position.y = std::min(position.y, viewBounds.top  + viewBounds.height - borderDistance - 200.f);// |__
     mPlayerCar->setPosition(position);
 }
+
+void World::spawnEnemies()
+{
+    while (!mEnemySpawnPoints.empty()
+         && mEnemySpawnPoints.back().y > getBattlefieldBounds().top)
+    {
+        SpawnPoint spawn = mEnemySpawnPoints.back();
+
+        auto enemy = std::make_shared<Car>(spawn.type, mTextureManager, mFontManager);
+        enemy->setPosition(spawn.x, spawn.y);
+        enemy->setRotation(180.f);
+        enemy->setCategory(Category::EnemyCar);
+
+        mSceneLayers[Road]->attachChild(enemy);
+        mEnemies.push_back(std::move(enemy));
+
+        mEnemySpawnPoints.pop_back();
+    }
+}
+
+void World::addEnemy(Car::Type type, float x, float y)
+{
+    mEnemySpawnPoints.push_back(SpawnPoint(type, mWorldView.getCenter().x + x, mWorldBounds.height - y));
+}
+
+void World::addEnemies()
+{
+    addEnemy(Car::Raptor,      55.f, 4900.f);
+    addEnemy(Car::Viper,      -75.f, 3700.f);
+    addEnemy(Car::Challenger, -75.f, 2600.f);
+    addEnemy(Car::Raptor,      55.f, 1900.f);
+
+    std::sort(mEnemySpawnPoints.begin(), mEnemySpawnPoints.end(),
+    [](SpawnPoint lhs, SpawnPoint rhs)
+    {
+        return lhs.y < rhs.y;
+    });
+}
+
+void World::updateEnemies(sf::Time deltaTime)
+{
+    std::for_each(mEnemies.begin(), mEnemies.end(),
+    [deltaTime, this](Car::Ptr enemy)
+    {
+        enemy->update(deltaTime, getCommandQueue());
+        enemy->updateMovementPattern(deltaTime);
+    });
+}
+
+
+void World::guideMissiles()
+{
+    Command enemyCollector;
+    enemyCollector.category = Category::EnemyCar;
+    enemyCollector.action   =
+    [this](SceneNode& node, sf::Time)
+    {
+        Car& enemy = static_cast<Car&>(node);
+
+        if (enemy.isDestroyed())
+        {
+            mActiveEnemies.push_back(Car::Ptr(&enemy));
+        }
+    };
+
+    Command missileGuider;
+    missileGuider.category = Category::Projectile;
+    missileGuider.action = derivedAction<Projectile>(
+    [this] (SceneNode& node, sf::Time)
+    {
+        Projectile& missile = static_cast<Projectile&>(node);
+
+        // Ignore unguided bullets
+        if (!missile.isGuided())
+        {
+            return;
+        }
+        float minDistance = std::numeric_limits<float>::max();
+        auto closestEnemy = Car::Ptr(nullptr);
+
+        std::for_each(mActiveEnemies.begin(), mActiveEnemies.end(),
+        [&](Car::Ptr enemy)
+        {
+            float enemyDistance = distance(missile.getPosition(), enemy->getPosition());
+            if (enemyDistance < minDistance)
+            {
+                closestEnemy = enemy;
+                minDistance = enemyDistance;
+            }
+        });
+
+        if (closestEnemy)
+        {
+            missile.guideTowards(closestEnemy->getWorldPosition());
+        }
+    });
+
+    mCommandQueue.push(enemyCollector);
+    mCommandQueue.push(missileGuider);
+
+    mActiveEnemies.clear();
+}
+
 
 void World::processInput()
 {
@@ -131,4 +251,13 @@ void World::processInput()
 CommandQueue& World::getCommandQueue()
 {
     return mCommandQueue;
+}
+
+sf::FloatRect World::getBattlefieldBounds()
+{
+    return sf::FloatRect
+    (
+        mWorldView.getCenter() - mWorldView.getSize() / 1.6f,
+        mWorldView.getSize()
+    ); 
 }

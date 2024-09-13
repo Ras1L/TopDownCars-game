@@ -6,6 +6,18 @@
 class Entity : public SceneNode
 {
 public:
+    explicit Entity(int);
+
+    void damage(int);
+    void repair(int);
+    void destroy();
+
+    int  getHitpoints() const;
+    bool isDestroyed()  const;
+
+public:
+    Entity() = default;
+
     void setVelocity(sf::Vector2f);
     void setVelocity(float vx, float vy);
 
@@ -20,6 +32,7 @@ private:
     virtual void updateCurrent(sf::Time);
 
 private:
+    int          mHitpoints;
     sf::Vector2f mVelocity;
 };
 

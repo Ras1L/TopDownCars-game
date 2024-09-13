@@ -4,7 +4,7 @@
 #include "scene_node.hpp"
 
 
-class SpriteNode : public SceneNode
+class SpriteNode final : public SceneNode
 {
 public:
     explicit SpriteNode(const sf::Texture&);
@@ -13,7 +13,7 @@ public:
     virtual unsigned int getCategory() const override final;
 
 public:
-    virtual void drawCurrent(sf::RenderTarget&, sf::RenderStates&) const override;
+    virtual void drawCurrent(sf::RenderTarget&, sf::RenderStates) const override;
 
 private:
     sf::Sprite mSprite;

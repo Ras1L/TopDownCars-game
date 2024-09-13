@@ -15,7 +15,7 @@ Button::Button()
     mLabel.setPosition(rectCoord.x + 50.f, rectCoord.y);
 }
 
-void Button::drawCurrent(sf::RenderTarget& target, sf::RenderStates& states) const
+void Button::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(mRect, states);
     target.draw(mLabel, states);
@@ -26,7 +26,7 @@ unsigned int Button::getCategory() const
     return Category::Button;
 }
 
-void Button::setText(const std::string& text)
+void Button::setString(const std::string& text)
 {
     mLabel.setString(text);
 }
@@ -53,14 +53,4 @@ void Button::select(bool isSelect)
 bool Button::isSelected() const
 {
     return mIsSelected;
-}
-
-void Button::activate(bool isActive)
-{
-    mIsActivated = isActive;
-}
-
-bool Button::isActivated() const
-{
-    return mIsActivated;
 }

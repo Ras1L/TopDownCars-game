@@ -4,8 +4,21 @@
 #include "resource_holder.hpp"
 #include "sprite_node.hpp"
 #include "car.hpp"
-#include "command_queue.hpp"
 #include "player.hpp"
+
+
+struct SpawnPoint
+{
+    SpawnPoint(Car::Type type, float x, float y)
+    : type(type), x(x), y(y)
+    {
+    }
+
+    Car::Type type;
+    float     x;
+    float     y;
+};
+
 
 #include <array>
 
@@ -21,8 +34,17 @@ public:
     CommandQueue& getCommandQueue();
 
 private:
-    void loadTextures();
+    void loadResources();
     void buildScene();
+
+    void spawnEnemies();
+    void addEnemy(Car::Type, float, float);
+    void addEnemies();
+    void updateEnemies(sf::Time);
+
+    void guideMissiles();
+
+    sf::FloatRect getBattlefieldBounds();
 
 private:
     enum Layer
@@ -36,18 +58,23 @@ private:
 private:
     sf::RenderWindow&                      mWindow;
     sf::View                               mWorldView;
-    TextureHolder                          mTextureManager;
+    sf::FloatRect                          mWorldBounds;
+    float                                  mScrollSpeed;
+
     SceneNode                              mSceneGraph;
     std::array<SceneNode::Ptr, LayerCount> mSceneLayers;
+    std::vector<SpawnPoint>                mEnemySpawnPoints;
+    std::vector<Car::Ptr>                  mEnemies;
+    std::vector<Car::Ptr>                  mActiveEnemies;
     CommandQueue                           mCommandQueue;
 
-    sf::FloatRect                          mWorldBounds;
+    TextureHolder                          mTextureManager;
+    FontHolder                             mFontManager;
+
     sf::Vector2f                           mSpawnPosition;
-    float                                  mScrollSpeed;
     std::shared_ptr<Car>                   mPlayerCar;
     Player                                 mPlayer;
 };
-
 
 #include "world.inl"
 
